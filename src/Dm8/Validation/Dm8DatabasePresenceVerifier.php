@@ -26,9 +26,9 @@ class Dm8DatabasePresenceVerifier extends DatabasePresenceVerifier
             return parent::getCount($collection, $column, $value, $excludeId, $idColumn, $extra);
         }
 
-        $connection->useCaseInsensitiveSession();
+        // $connection->useCaseInsensitiveSession();
         $count = parent::getCount($collection, $column, $value, $excludeId, $idColumn, $extra);
-        $connection->useCaseSensitiveSession();
+        // $connection->useCaseSensitiveSession();
 
         return $count;
     }
@@ -50,9 +50,9 @@ class Dm8DatabasePresenceVerifier extends DatabasePresenceVerifier
             return parent::getMultiCount($collection, $column, $values, $extra);
         }
 
-        $connection->useCaseInsensitiveSession();
+        // $connection->useCaseInsensitiveSession();
         $count = parent::getMultiCount($collection, $column, $values, $extra);
-        $connection->useCaseSensitiveSession();
+        // $connection->useCaseSensitiveSession();
 
         return $count;
     }
